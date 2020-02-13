@@ -9,12 +9,14 @@ app.use(express.static('src/client'))
 console.log(__dirname)
 
 app.get('/', function (req, res) {
-    res.sendFile('/client/views/index.html', { root: __dirname + '/..' })
+    res.sendFile('/client/views/index.html', {
+        root: __dirname + '/..'
+    })
 })
-
+const port = 5000;
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 3000!')
+app.listen(port, function () {
+    console.log(`Example app listening on localhost: ${port}`)
 })
 
 app.get('/test', function (req, res) {
